@@ -1,0 +1,108 @@
+.storybook-select-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  position: relative;
+}
+
+.storybook-select-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.storybook-select-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.storybook-select-trigger {
+  width: 100%;
+  padding: 10px 36px 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  font-size: 15px;
+  transition: all 0.2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  min-height: 42px;
+}
+
+.storybook-select-trigger:hover {
+  border-color: var(--accent-border);
+}
+
+.storybook-select-container--open .storybook-select-trigger {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-bg);
+}
+
+.storybook-select-arrow {
+  position: absolute;
+  right: 14px;
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.storybook-select-container--open .storybook-select-arrow {
+  transform: rotate(180deg);
+}
+
+/* Dropdown */
+.storybook-select-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  z-index: 10;
+  max-height: 250px;
+  overflow-y: auto;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: all 0.2s;
+}
+
+.storybook-select-container--open .storybook-select-dropdown {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.storybook-select-option {
+  padding: 10px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.1s;
+  color: var(--text);
+}
+
+.storybook-select-option:hover {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+.storybook-select-option--selected {
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.storybook-select-placeholder {
+  color: #9ca3af;
+}
+
+/* Error State */
+.storybook-select--error .storybook-select-trigger {
+  border-color: #ef4444;
+}

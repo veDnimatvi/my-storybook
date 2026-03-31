@@ -1,0 +1,60 @@
+.storybook-input-number-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.storybook-input-number-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.storybook-input-number-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.storybook-input-number {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  font-size: 15px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+  text-align: right; /* Standard for numbers */
+}
+
+/* For currency, we might want a prefix */
+.storybook-input-number--currency {
+  padding-right: 40px;
+}
+
+.storybook-input-number-suffix {
+  position: absolute;
+  right: 14px;
+  color: #9ca3af;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.storybook-input-number:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-bg);
+}
+
+.storybook-input-number--error {
+  border-color: #ef4444;
+}
+
+.storybook-input-number-error-msg {
+  font-size: 12px;
+  color: #ef4444;
+  margin-top: 2px;
+}

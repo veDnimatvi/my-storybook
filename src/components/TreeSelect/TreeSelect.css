@@ -1,0 +1,130 @@
+.storybook-treeselect-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  position: relative;
+}
+
+.storybook-treeselect-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.storybook-treeselect-trigger {
+  width: 100%;
+  padding: 10px 36px 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  font-size: 15px;
+  transition: all 0.2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  min-height: 42px;
+  box-sizing: border-box;
+}
+
+.storybook-treeselect-container--open .storybook-treeselect-trigger {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-bg);
+}
+
+.storybook-treeselect-arrow {
+  position: absolute;
+  right: 14px;
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.storybook-treeselect-container--open .storybook-treeselect-arrow {
+  transform: rotate(180deg);
+}
+
+.storybook-treeselect-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  z-index: 10;
+  max-height: 300px;
+  overflow-y: auto;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: all 0.2s;
+  padding: 8px 0;
+}
+
+.storybook-treeselect-container--open .storybook-treeselect-dropdown {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Tree Nodes */
+.storybook-treeselect-nodes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.storybook-treeselect-node {
+  padding-left: 20px;
+}
+
+.storybook-treeselect-node-content {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.1s;
+  border-radius: 4px;
+  margin: 0 8px;
+}
+
+.storybook-treeselect-node-content:hover {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+.storybook-treeselect-node-content--selected {
+  background: var(--accent-bg) !important;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.storybook-treeselect-toggle {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.storybook-treeselect-toggle--expanded {
+  transform: rotate(90deg);
+}
+
+.storybook-treeselect-toggle:hover {
+  background: rgba(0,0,0,0.05);
+  border-radius: 4px;
+}
+
+.storybook-treeselect-placeholder {
+  color: #9ca3af;
+}

@@ -1,0 +1,62 @@
+.storybook-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.storybook-input-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.storybook-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.storybook-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  font-size: 15px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+.storybook-input::placeholder {
+  color: #9ca3af;
+}
+
+.storybook-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-bg);
+}
+
+.storybook-input:disabled {
+  background: #f9fafb;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Error State */
+.storybook-input--error {
+  border-color: #ef4444;
+}
+
+.storybook-input--error:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+}
+
+.storybook-input-error-msg {
+  font-size: 12px;
+  color: #ef4444;
+  margin-top: 2px;
+}
